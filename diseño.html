@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Diseño de Software</title>
+    <style>
+        /* Variables de colores y estilos */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #34495e;
+            --success: #2ecc71;
+            --warning: #f39c12;
+            --info: #1abc9c;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Estilos generales */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Encabezado */
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        /* Tarjetas de contenido */
+        .card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            color: var(--primary);
+        }
+
+        /* Grid layout */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        /* Listas de principios */
+        .principle-list {
+            list-style-type: none;
+        }
+
+        .principle-item {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: var(--light);
+            border-left: 4px solid var(--secondary);
+            border-radius: 4px;
+            transition: var(--transition);
+        }
+
+        .principle-item:hover {
+            background-color: #dfe6e9;
+            transform: translateX(5px);
+        }
+
+        .principle-title {
+            font-weight: bold;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+
+        .principle-acronym {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+        }
+
+        /* Secciones especiales */
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .architecture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .architecture-item {
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            color: white;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .architecture-item:hover {
+            transform: scale(1.03);
+        }
+
+        .architecture-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 8px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background-color: var(--dark);
+            color: white;
+            border-radius: var(--border-radius);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Diseño de Software</h1>
+            <p class="subtitle">Mejores prácticas, principios y patrones para un software robusto, mantenible y eficiente</p>
+        </header>
+
+        <section class="card">
+            <h2>¿Qué es el Diseño de Software?</h2>
+            <p>Proceso fundamental en el desarrollo de aplicaciones que implica crear una especificación de un artefacto de software para cumplir objetivos específicos, utilizando un conjunto de componentes primitivos y sujeto a restricciones.</p>
+            <p>Actividad que sigue a la especificación de requisitos y precede a la programación, abarcando la planificación de una solución de software, incluyendo el diseño de algoritmos (bajo nivel) y la arquitectura del software (alto nivel).</p>
+        </section>
+
+        <h2>Principios de Diseño</h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">S</div>
+                    <h3 class="card-title">Principios SOLID</h3>
+                </div>
+                <ul class="principle-list">
+                    <li class="principle-item">
+                        <span class="principle-acronym">SRP</span>
+                        <div class="principle-title">Responsabilidad Única</div>
+                        <div>Un módulo debe tener una y solo una razón para cambiar</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">OCP</span>
+                        <div class="principle-title">Abierto/Cerrado</div>
+                        <div>Abierto a extensión, cerrado a modificación</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">LSP</span>
+                        <div class="principle-title">Sustitución de Liskov</div>
+                        <div>Los objetos deben poder ser reemplazados por sus subtipos</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">ISP</span>
+                        <div class="principle-title">Segregación de Interfaz</div>
+                        <div>Muchas interfaces específicas mejor que una general</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">DIP</span>
+                        <div class="principle-title">Inversión de Dependencia</div>
+                        <div>Depender de abstracciones, no de implementaciones</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">O</div>
+                    <h3 class="card-title">Otros Principios</h3>
+                </div>
+                <ul class="principle-list">
+                    <li class="principle-item">
+                        <span class="principle-acronym">DRY</span>
+                        <div class="principle-title">Don't Repeat Yourself</div>
+                        <div>Evitar la duplicación de lógica</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">IoC</span>
+                        <div class="principle-title">Inversión de Control</div>
+                        <div>Delegar control de flujos a un tercero</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">YAGNI</span>
+                        <div class="principle-title">You Aren't Gonna Need It</div>
+                        <div>No añadir funcionalidades hasta que sean necesarias</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">KISS</span>
+                        <div class="principle-title">Keep It Simple, Stupid</div>
+                        <div>Promover la simplicidad en el diseño</div>
+                    </li>
+                    <li class="principle-item">
+                        <span class="principle-acronym">LoD</span>
+                        <div class="principle-title">Ley de Demeter</div>
+                        <div>Limitar interacciones a elementos cercanos</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-icon">P</div>
+                    <h3 class="card-title">Prácticas Adicionales</h3>
+                </div>
+                <ul class="principle-list">
+                    <li class="principle-item">
+                        <div class="principle-title">Diseño débilmente acoplado</div>
+                        <div>Reduce el riesgo de cambios en cascada</div>
+                    </li>
+                    <li class="principle-item">
+                        <div class="principle-title">Composición sobre Herencia</div>
+                        <div>Favorece reutilización mediante composición</div>
+                    </li>
+                    <li class="principle-item">
+                        <div class="principle-title">Encapsular lo que varía</div>
+                        <div>Aislar partes del código que cambian frecuentemente</div>
+                    </li>
+                    <li class="principle-item">
+                        <div class="principle-title">4 Reglas de Diseño Simple (Kent Beck)</div>
+                        <div>Tests, intención, no duplicidad, elementos mínimos</div>
+                    </li>
+                    <li class="principle-item">
+                        <div class="principle-title">Regla del Boy Scout</div>
+                        <div>Dejar el código más limpio de lo que se encontró</div>
+                    </li>
+                    <li class="principle-item">
+                        <div class="principle-title">Último Momento Responsable</div>
+                        <div>Posponer decisiones de diseño irreversibles</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <h2>Arquitecturas y Metodologías</h2>
+        <div class="card full-width">
+            <div class="architecture-grid">
+                <div class="architecture-item">
+                    <div class="architecture-title">Diseño Orientado a Objetos (DOO)</div>
+                    <p>Planificar código pensando en objetos y responsabilidades</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Desarrollo Ágil</div>
+                    <p>Iterativo e incremental, prioriza colaboración y adaptación al cambio</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Domain-Driven Design (DDD)</div>
+                    <p>Conecta implementación con modelo de negocio mediante "lenguaje ubicuo"</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Arquitectura de Microservicios</div>
+                    <p>Colección de servicios pequeños, poco acoplados y autónomos</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Arquitectura Limpia</div>
+                    <p>Organiza la aplicación en capas según responsabilidades</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Arquitectura Hexagonal</div>
+                    <p>Separa lógica de negocio de detalles técnicos (puertos y adaptadores)</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">CQRS</div>
+                    <p>Separa modelos de datos para operaciones de lectura y escritura</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Arquitectura Orientada a Eventos</div>
+                    <p>Comunicación asíncrona entre componentes mediante eventos</p>
+                </div>
+                <div class="architecture-item">
+                    <div class="architecture-title">Event Sourcing</div>
+                    <p>Almacena secuencia de eventos de cambio de estado</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Patrones de Diseño</h2>
+            <p>Soluciones reutilizables a problemas comunes de diseño, proporcionando un lenguaje compartido y una estructura probada para crear código más eficiente, mantenible y comprensible.</p>
+            <p>Clasificados en <strong>creacionales</strong>, <strong>estructurales</strong> y <strong>de comportamiento</strong>. Popularizados por el libro "Design Patterns: Elements of Reusable Object-Oriented Software" (Gang of Four - GoF).</p>
+        </div>
+
+        <div class="card">
+            <h2>Referencia IEEE</h2>
+            <p>La norma <strong>IEEE 1016 - Descripción de Diseño del software</strong> forma parte del ámbito de la ingeniería de software y proporciona estándares para la documentación del diseño.</p>
+        </div>
+
+        <footer>
+            <p>Infografía sobre Diseño de Software - Basado en el documento proporcionado</p>
+        </footer>
+    </div>
+</body>
+</html>
